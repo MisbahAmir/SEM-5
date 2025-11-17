@@ -1,0 +1,310 @@
+                         // - step 1 - //
+                      //   craeting bank app //
+
+// sab sy phely ap ny ka naya folder bana lena ha Bank app react ky name sy pher is ky ander ak naya folder 
+// bana ha Backend ky name sy ab is folder ky under jana ha ha or command promtt ko open kar lena ha .pher
+// ab is ma hum apni commands chalen gye . ab ap ny browser ko open kar lena ak command chalnai ha wo bass
+// ak bar chalani hoti ha globaly hoti ha means ky pure laptop k support karti ha .
+
+
+                              // step 2 //
+                          // express genertor //  
+
+//ab ap ny browser per express genertor ko search karna ha ye hamare pass bana banaya howa server provide 
+//kare ga . or pher second command ko copy karna ha pheli wali jo command ha . linux ma use hoti ha . 
+// ye command sirf ak bar run hoti ha . 
+
+            //    npm install -g express-generator
+
+//or command promtt ma paste karni ha or enter karny ky ap ny sencond command ye paste karni ha 
+
+          //       express
+
+//ye command hamre pass sare folder ki dierectory dekha rahi ha or ap back kar ky folder ma dekhy tu 
+//kaffi sari file ban gye ha . ab cls ki command chalani ha or kuch dependency ko yahi add karna ha .
+
+
+         //   npm i mongoose mongodb express jsonwebtoken dotenv cors      
+
+//or is command ko run kar dyen ha . for suppose koi error aye tu ap ye npm i mongoose is taraha har ak 
+//ko ak ak kar ky run karen  gye tu error nahi aye per mery case ak bar ma hi install ho gaya ha .
+
+
+                            // step 3 //
+                // craeting react project in bank app //
+
+// ab ap ny wapis folder ma aana Q ky ab hum ny react ka folder bana ha . bank app ma cmd open karna ha
+// backend ko select nahi karna . ab idhar react making project command ko run karna ha 
+
+               //    npm create vite@latest      
+                            
+
+//pher enter karty sath hi project ka name pocuhy ga project ka 1 name frontend rahkna ha pher 2 farme
+//work pouchy tu react select karna 3 number per varient pouchy ga tu javascript select karni ha . pher
+// scaffold hoty hi 3 commands show ho wo hi copy kar ky wai paste karni ha ka ak kar ky project run 
+//ho jaye ga  3 command project ko run karny ki ha wo abhi na chalyen .
+
+                        // step 4 //
+                 // add dependancy ant design //
+
+//ab ap ny browser per aa jana ha or ant design ko search karna ha . or pher development per click karna 
+//ha thora sa scroll karen gye tu . npm ki install command ko run karna ha wahi cmd ma 
+
+              // npm install antd --save
+        
+              
+// ab ap ny ak or icons ki comand ko bhi install karna ha tu ab development ki jagah component ko open 
+// karen or first command copy karen or terminal ma hi paste kar dy ye bhi install ho gaya ab ap ny apny
+//  vs ko open karna ha command sy kar ya manual kar lo ap ki marzi ha . 
+ 
+              // code ./
+
+//ho gaya open ab ap ny tailwind ko bhi install karna ha .  tu again yahan per terminal ma command promt 
+//ko open  kar lyena ha . ab browser per tailwind ko search karna ha or 2 command ko copy kar lyena ha 
+// pheli command jo ha project banay ki wo alredy abhi bana liya ha . ab second ko terminal ma run kar 
+//dyen 
+
+
+              // npm install tailwindcss @tailwindcss/vite
+
+//tailwind install ho jaye gi ab ap ny iss css ki file set karna ha tu vite.config.js ki file ma jana ha 
+// or tailwind ma step 3 ma higligted import line ko copy karna ha or or vite config ma paste karni ha 
+// line number 3 ma . or isi tarha wapis tailwind per jana or import ky neachy plugins show ho rahy ha 
+// is ma sy highligted tailwind plugin ko copy karna ha or vite config ma hi line number 7 ma comma laga 
+
+            //  tailwindcss(),  ->
+            //plugins: [react(),  tailwindcss(),],
+
+
+// is tarha add kar dyena ha ab ap ny src ki folder ma ana ha or index.css ki file ma sari css ko remove 
+// karna ha or is ko import kar deyna ha 
+
+           // @import "tailwindcss";
+
+                                // step 5 // 
+                         // add multitple dependancy in 1 time //
+                         
+//ab ap ny again terminal ko open karna ha or ye comand chanai ha 
+
+          // npm i react-router-dom jsonwebtoken axios swr
+
+
+                                 // step 6 //
+                             // project set up //
+
+//ab ap ny folder banay lakin react ma ak ky under ak project nahi banat ha . sab sy ap ny sare folder 
+// sy bahir click karna ha or ak naya folder bana ha component ka ab is ky ak file banaye .txt ki ye 
+// importent ha other wise naya folder nahi bane ga . .txt ki file banay ky bad ap ny ak or folder 
+// bana ha layout ka pher .txt ki file pher admin ka folder pher .txt ki file pher home ky folder ma 
+// index.jsx ki file bana leni ha . 
+
+ab ap ny browser per anna ha or or aunt design ko search kar lena ha . or per components ma search karna 
+ha layout or layout ma enter hony ky bad ap ny thora scrolldown karna ha or dropdown wale nav bar per 
+click karna ha nav ky neachy hi show code ka option ho ga us ma bhi 2 option hon gye . ak type script 
+or dusra java script humm java ko use kar rahy ha tu java wale code ko copy kar lein gye . or  homelayout
+ky folder ma jo file ha index ki us ma ye code paste kar dyena ha . ab is code ki line number 18 ma 
+slider ha us ko minimize kar dyena ha . pher layout ko ko minimize kar dyena ha or under waly layout
+ko copy kar ky cut kar dyena ha or phir jo main layout bacha ha us ko remove kar ky copy kiye howe layout
+ko paste kar dyena ha . ab hum ny component waly folder ma home ka folder banaya tha . us ma ak file or 
+banani ha index.js 
+
+                                // step 7//
+                     //Make component in app.jsx file  //
+
+ab ap ny home ky ander app.jsx wali file ko open kar leyena ha .or us ma ap ny arrow function
+wala componenet bana leyna ha . is taraha const ko use karty home ye app ka first interface ho ga                       
+                          
+
+                          
+const Homepage=()=>{
+
+return(
+    
+)
+} 
+
+export default Homepage
+
+ab ap ny again jana ha layout index wali file jahan component past kiya tha us ka name bhi app ha or same 
+aessa componenet hum ny app.jsx wali file ma banaya howa ha . tu ap ko layout ky index file ky component 
+ka name change karna ha or app sy hata kar homelayout ma change kar dyena ha . line number 18 ho ga name 
+change . app ki jagah Homelayout rakh diya lakin yad rahy neachy export deafult ma bhi change kar dyena 
+otherwise file run nahi ho gi . ab ap ny again HOME index wali file per aa jana ha or homelayout wale
+component ko call kar lena ha . or is ma hum ak h1 tag bhi open kar dy gye is tarha ->
+
+                   
+import Homelayout from "../layout/Homelayout"
+
+
+const Homepage=()=>{
+return(
+    <Homelayout>
+        <h1> <b>This is a home page </b></h1>
+    </Homelayout>
+)
+} 
+
+export default Homepage
+
+
+
+ab humein ye page dekhana per dekhy ga nahi Q ky hum ny routing hi nahi ki ha . tu routing ky liye hamien
+agian dubara app.jsx wali file ma jana ho ga . or wahan routing set karni ha 
+
+
+                                       // step 8 //
+                               // set routing in app.jsx file //
+
+
+ ab hum ny app wali file ma anaa ha or return ky under browser router ko call karna ager dependancy add
+ ho gi tu hi emport ho ga other wise nahi ho ga . is tarha routing karty output show ho jaye ga 
+
+
+ import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Homelayout from "../components/layout/Homelayout"
+
+const App =()=>{
+return(
+<BrowserRouter>
+
+<Routes>
+    <Route path='/' element={<Homelayout></Homelayout>}></Route>
+</Routes>
+</BrowserRouter>
+)
+}
+
+
+export default App
+
+
+
+ab ap ny agian homelayout ki index file ma aa jana ha or line number 11 ma childern ky object ko call 
+kar lena ha is tarha 
+
+                   const Homelayout = () => {}
+
+                   is tarha 
+
+                   const Homelayout = ({childern}) => {}
+
+or is tarha line 39 ma content likha ho us ky uper bhi childern ky object ko call kar leyna ha 
+
+                       {childern}  is tarha 
+
+
+is ky bad again line no 18 ma header ka tag mile ga . is ma button ky full tag ko remove kar dyena
+ha or ye link line pass kar dyeni ha 
+
+
+<Link to="/admin" className='!text-pink-500'>AdminPanel</Link>
+
+is taraha hum admin ky page per redierect ho raha ha  ab index.jsx ki file ma again ayen q ky 
+hamari image display nahi ho pa rahi ha tu same navbar ko java ka code antdesign sy copy karen 
+or again paste kar ky refresh kar ky dekhein nav bar hamara show ho raha ha .
+
+                         // step 9 //
+                       // login form //
+
+ab ap ny home ky folder ma ak or folder bana ha login ka or is ma ak file bana lyeni ha login.jsx ky name
+sy ab is ma hum component bana lyein gye . flex ki class hamary pass hamary pass block elements ma 
+ ak ky barabar ma ak ho jaye ga or  bootstarp ma row hoti                       
+
+
+const Loginpage =( )=>{
+return(
+
+
+    <div className="flex"></div>
+)
+}
+
+export default Loginpage
+
+
+ab ap ny bank image ko browser sy dowmload kar frontend ky folder public ma save kar dyeni ha ab flex
+ky div ky ander 2 div or open kar lyeny ak ma image rakhni ha or 2 ma login form ab hum phely img ko 
+set karty ha .is tarha with ko 1/2 ka matlab ha adha 50 percent adhy per img aye gi is div ma hum 
+ab jo bhi kam karen gye wo page ky adhy side ma hi ho ga or image ki width bhi hum ny 4/5 ki ha ye 
+sab hamin tailwindcss sy mil jaye ga 
+
+
+ <div className="w-1/2 items-center justify-center hidden md:flex">
+<img src="/bank.jpg" alt="Bank" className="w-4/5"/>
+</div>
+
+
+is taraha hum ny login ka poora page design kar lena ha .
+
+
+import{Button, Card,Form,Input} from "antd"
+const {Item}= Form;
+const Loginpage=()=>{
+const onFinish=(values)=>{
+console.log(values)
+}
+   return(
+
+     // flex ki class hamary pass hamary pass block elements ma ka ky barabar ma ak ho jaye ga or 
+ // bootstarp ma row hoti 
+     <div className="flex">
+
+<div className="w-1/2 items-center justify-center hidden md:flex">
+<img src="/bank.jpg" alt="Bank" className="w-4/5"/>
+</div>
+<div className="w-full md:w-1/2 items-center justify-center flex p-6 bg-white">
+<Card className="shadow-2xl !bg-pink-50">
+   <h1 className="text-2xl text-center font-semibold mb-4">Bank Login</h1>
+   <Form onFinish={onFinish}>
+<Item name="username" label="User Name" rules={[{required:true}]}>
+   <Input placeholder="Enter Name"/>
+</Item>
+<Item name="password" label="User Password" rules={[{required:true}]}>
+   <Input placeholder="Enter Password"/>
+</Item>
+<Button htmlType="submit" className="!bg-pink-300 !font-bold !text-white">Login</Button>
+   </Form>
+</Card>
+
+</div>
+
+    </div>
+   )
+
+}
+
+export default Loginpage
+
+
+                             // class 10 //
+                             // step 10 //
+
+
+ab ap ny froentend ky folder ma layout ka folder  ha us ma ak or folder bana lena ha Adminlayout or
+is folder ma ak index.jsx ki file bana leni ha .  AB ap ny browser per ant design search kar lena ha 
+or components ma enter karny ky bad layout per click kare thora sa scroll kar lein gye . or header 
+3 ka java code copy kar lein gye . or admin layout ma jo fie bane ha index ki wahan paste kar dy 
+gye . ab is ky compoenet ka name change karen gye . or adminlayoutReal rakh dy gye . AB ap ny line
+number 11 sy app ko remove kar ky  adminlayoutReal or neachy export deafult ma bhii same name rakh 
+dy gye . ab ap ny again line no 11 ma hi arrow function ky beach ma ({childern}) ko call karna ha .
+or neachy content show raha ho ga page ky end per wahan bhi ap ny same childern java style ma bracket
+ky sath is tarha add kar dyena ha           {childern}     is tarha . ab ap ny is Admin ky name sy 
+ak folder banaya howa abhi wo blank ha . ab ap ny is ma bhi again ak file bana leni ha . index.jsx
+ky name sy ab is ma hum naya component bana lein gye . dashboard ky name sy is taraha 
+
+
+function dashboard(){
+
+return(
+    <>
+    <h1>Dashboard page </h1>
+    </>
+)
+}
+
+export default dashboard;
+
+ab ap ny app.jsx wali file ma aajana ha or routing karni ha dashboard ky componeent ki 
+
+
+                          
