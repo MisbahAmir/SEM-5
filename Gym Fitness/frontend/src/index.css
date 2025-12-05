@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 /* Card hover effect */
 .card-hover:hover {
@@ -73,4 +74,385 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+
+
+
+
+
+/* ===================== HEADER MODERN RED-BLACK THEME ===================== */
+header {
+  background: #000;
+  padding: 10px 0;
+  border-bottom: 2px solid rgba(255, 0, 0, 0.4);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.35);
+}
+
+header .menu-wrapper a {
+  color: #fff !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: 0.3s ease;
+}
+
+header .menu-wrapper a:hover {
+  color: #ff1a1a !important;
+  text-shadow: 0 0 8px #ff0000;
+}
+
+/* CONTACT ME BUTTON */
+header .btn {
+  background: linear-gradient(90deg, #ff0000, #700000);
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 24px;
+  transition: 0.3s;
+}
+
+header .btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 20px #ff0000;
+}
+
+/* ===================== GYM HEADINGS ===================== */
+.gym-heading-main {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 48px;
+  font-weight: 900;
+  color: #ff2424;
+  letter-spacing: 1px;
+  text-shadow: 0 0 14px rgba(255, 0, 0, 0.6);
+  animation: slideInDown 1.2s ease;
+}
+
+.gym-heading-sub {
+  text-align: center;
+  margin: 50px 0 20px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  animation: fadeIn 1.3s ease;
+}
+
+/* Animations */
+@keyframes slideInDown {
+  from {
+    transform: translateY(-60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* ================= CYBERPUNK BACKGROUND ================= */
+.contact-section {
+  position: relative;
+  background: #000;
+  color: #fff;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+/* ANIMATED RED WAVES */
+.contact-section::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 100%;
+  height: 500px;
+
+  opacity: 0.25;
+  animation: waveMove 12s linear infinite;
+  z-index: 1;
+}
+
+@keyframes waveMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-600px); }
+}
+
+/* FALLING LIGHT SPARKS */
+.contact-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  
+  opacity: 0.15;
+  animation: sparkFall 8s linear infinite;
+}
+
+@keyframes sparkFall {
+  from { background-position: 0 -300px; }
+  to { background-position: 0 300px; }
+}
+
+/* ================= GLASS + NEON FORM ================= */
+.form-contact {
+  position: relative;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 32px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  box-shadow: 
+    0 0 20px rgba(255, 0, 0, 0.45),
+    inset 0 0 30px rgba(255, 0, 0, 0.2);
+  z-index: 5;
+  transition: transform 0.4s ease;
+}
+
+/* 3D TILT EFFECT */
+.form-contact:hover {
+  transform: perspective(900px) rotateX(5deg) rotateY(-5deg);
+}
+
+/* ANIMATED BORDER */
+.form-contact::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(45deg, #ff0000, transparent, #b20000, transparent, #ff0000);
+  -webkit-mask: 
+     linear-gradient(#000 0 0) content-box, 
+     linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: neonBorder 3s linear infinite;
+}
+
+@keyframes neonBorder {
+  to { transform: rotate(360deg); }
+}
+
+/* FORM FIELDS */
+.form-control {
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 40, 40, 0.4);
+  padding: 14px;
+  color: #fff;
+  border-radius: 12px;
+  transition: 0.3s ease;
+  box-shadow: inset 0 0 12px rgba(255, 0, 0, 0.2);
+}
+
+.form-control:focus {
+  border-color: #ff2e2e;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+}
+
+/* SUBMIT BUTTON (CYBER GLOW) */
+.btn-primary {
+  background: linear-gradient(90deg, #ff0000, #700000, #ff0000);
+  border: none;
+  padding: 14px 40px;
+  border-radius: 40px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.45);
+}
+
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,0,0,0.5), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.btn-primary:hover::after {
+  opacity: 1;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(255, 0, 0, 0.9);
+}
+
+/* ================= CONTACT INFO CARDS ================= */
+.contact-info {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 0, 0, 0.25);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.2);
+  transition: 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: 5;
+}
+
+.contact-info:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 0 40px rgba(255, 0, 0, 0.6);
+}
+
+/* ICON GLOW CIRCLE */
+.contact-info__icon {
+  background: rgba(255, 0, 0, 0.25);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  font-size: 32px;
+  color: #ff3a3a;
+  box-shadow: 0 0 18px rgba(255, 0, 0, 0.6);
+  transition: 0.4s;
+}
+
+.contact-info:hover .contact-info__icon {
+  transform: rotate(12deg) scale(1.1);
+  background: rgba(255, 0, 0, 0.55);
+  box-shadow: 0 0 28px rgba(255, 0, 0, 1);
+}
+
+/* TEXT SHINE */
+.contact-info h3 {
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+}
+
+/* ================= GOOGLE MAP ================= */
+.mb-5 {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 35px rgba(255, 0, 0, 0.4);
+  animation: fadeIn 1.2s ease;
+}
+
+/* Fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+/* ======================= CONTACT HERO HEADING ======================= */
+.contact-hero-heading h2 {
+  font-size: 52px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.7),
+               0 0 25px rgba(255, 0, 0, 0.5);
+  animation: glowPulse 2.5s infinite ease-in-out;
+}
+
+.contact-tagline {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffdfdf;
+  opacity: 0.9;
+  letter-spacing: 0.3px;
+  text-shadow: 0 0 6px rgba(255, 0, 0, 0.5);
+  animation: fadeInUp 1.2s ease;
+}
+
+/* ======================= BARBELL DIVIDER ======================= */
+.barbell-divider {
+  margin: 20px auto 0;
+  width: 120px;
+  height: 5px;
+  background: linear-gradient(90deg, #ff0000, #660000, #ff0000);
+  border-radius: 10px;
+  position: relative;
+  animation: expandBar 1.2s ease forwards;
+}
+
+.barbell-divider::before,
+.barbell-divider::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  width: 12px;
+  height: 12px;
+  background: #ff0000;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #ff0000;
+}
+
+.barbell-divider::before {
+  left: -20px;
+}
+
+.barbell-divider::after {
+  right: -20px;
+}
+
+/* ======================= ANIMATIONS ======================= */
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.6),
+                 0 0 25px rgba(255, 0, 0, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 18px rgba(255, 0, 0, 0.9),
+                 0 0 35px rgba(255, 0, 0, 0.6);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.6),
+                 0 0 25px rgba(255, 0, 0, 0.3);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes expandBar {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 120px;
+    opacity: 1;
+  }
+}
+
+
+
 

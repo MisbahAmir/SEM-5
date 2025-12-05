@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Poppins:wght@300;400;500&display=swap');
+
+
+
+/* Lock animations INSIDE hero only */
+.ultra-landing,
+.premium-hero {
+  overflow: hidden;
+  position: relative;
+}
+
+
+/* MAIN WRAPPER */
+.ultra-landing {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background: url("https://images.unsplash.com/photo-1599058917212-d750089bc07b?q=80")
+    no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 🔥 1. RED HOLOGRAM ENERGY RING ROTATION */
+/* ++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.energy-ring {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 0, 0, 0.6);
+  box-shadow: 
+    0 0 30px rgba(255, 0, 0, 0.7),
+    0 0 80px rgba(255, 0, 0, 0.4),
+    inset 0 0 40px rgba(255, 0, 0, 0.7);
+  animation: rotateRing 8s linear infinite;
+  z-index: 2;
+}
+
+@keyframes rotateRing {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.1); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* Place the ring behind content */
+.ultra-landing .energy-ring {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 🔥 2. RED PARTICLE SPARKS */
+/* ++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.sparks {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.spark {
+  position: absolute;
+  width: 4px;
+  height: 20px;
+  background: red;
+  opacity: 0.3;
+  border-radius: 5px;
+  animation: sparkMove 3s linear infinite;
+  filter: blur(2px);
+}
+
+@keyframes sparkMove {
+  0% { transform: translateY(0) scale(0.7); opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-220px) scale(1.1); opacity: 0; }
+}
+
+/* Randomize spark positions */
+.spark:nth-child(odd) { left: 20%; animation-delay: .2s; }
+.spark:nth-child(even) { left: 70%; animation-delay: .5s; }
+.spark:nth-child(3) { left: 40%; animation-delay: 1s; }
+.spark:nth-child(4) { left: 55%; animation-delay: 1.6s; }
+.spark:nth-child(5) { left: 10%; animation-delay: .8s; }
+.spark:nth-child(6) { left: 85%; animation-delay: .3s; }
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 🔥 3. RED MOVING SMOKE EFFECT */
+/* ++++++++++++++++++++++++++++++++++++++++++++++ */
+.red-smoke {
+  position: absolute;
+  inset: 0;
+  background: url("https://i.ibb.co/wwzn0Dd/red-smoke.png") no-repeat center/cover;
+  opacity: 0.22;
+  mix-blend-mode: screen;
+  animation: smokeMove 10s infinite linear;
+  z-index: 2;
+}
+
+@keyframes smokeMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-300px); }
+}
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 🔥 4. MAIN CONTENT WITH NEON FRAME */
+/* ++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.landing-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  padding: 40px;
+  border-radius: 25px;
+  backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 0, 0, 0.6);
+
+  box-shadow:
+    0 0 25px rgba(255, 0, 0, 0.6),
+    inset 0 0 25px rgba(255, 0, 0, 0.4);
+
+  animation: fadeUp 1.3s ease forwards;
+}
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 🔥 5. 3D HOLOGRAM TITLE */
+/* ++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.landing-title {
+  font-size: 5rem;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  background: linear-gradient(to bottom, white, #ff2a2a);
+  -webkit-background-clip: text;
+  color: transparent;
+
+  text-shadow:
+    0 0 30px rgba(255, 0, 0, 0.9),
+    0 0 60px rgba(255, 0, 0, 1);
+
+  animation: glowPulse 4s infinite ease-in-out;
+}
+
+@keyframes glowPulse {
+  0%, 100% { text-shadow: 0 0 40px red; }
+  50% { text-shadow: 0 0 80px #ff3d3d; }
+}
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 🔥 6. GLITCH EFFECT ON HOVER */
+/* ++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.landing-title:hover {
+  animation: glitch 0.4s linear infinite;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  33% { transform: translate(-4px, 2px); }
+  66% { transform: translate(3px, -3px); }
+  100% { transform: translate(0); }
+}
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 🔥 7. TAGLINE */
+/* ++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.landing-tagline {
+  margin-top: 10px;
+  font-size: 1.3rem;
+  color: #ffdddd;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px rgba(255, 0, 0, .6);
+}
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 🔥 8. MOVING LIGHT BAR */
+/* ++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.landing-divider {
+  margin: 28px auto;
+  width: 190px;
+  height: 6px;
+  background: linear-gradient(90deg, #ff0000, #330000, #ff0000);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.landing-divider::after {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  animation: barGlow 2s infinite linear;
+}
+
+@keyframes barGlow {
+  0% { left: -50%; }
+  100% { left: 120%; }
+}
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 🔥 9. ULTRA NEON BUTTONS */
+/* ++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.btn-neon {
+  padding: 16px 50px;
+  border-radius: 40px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  border: none;
+  color: white;
+  background: linear-gradient(90deg, #ff0000, #660000, #aa0000);
+
+  box-shadow:
+    0 0 20px rgba(255,0,0,0.9),
+    0 0 50px rgba(255,0,0,0.7);
+
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.btn-neon:hover {
+  transform: scale(1.15);
+  box-shadow:
+    0 0 60px rgba(255, 0, 0, 1),
+    0 0 120px rgba(255, 20, 20, 1);
+}
+
+
+/* OUTLINE */
+.btn-neon-outline {
+  padding: 16px 50px;
+  font-size: 1.4rem;
+  border-radius: 40px;
+  border: 2px solid #ff1a1a;
+  color: #ff1a1a;
+  background: transparent;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.btn-neon-outline:hover {
+  background: #ff1a1a;
+  color: white;
+  transform: scale(1.15);
+
+  box-shadow:
+    0 0 50px rgba(255, 0, 0, 1),
+    0 0 100px rgba(255, 0, 0, 1);
+}
+
+
+/* BUTTON GROUP */
+.landing-btn-group {
+  margin-top: 40px;
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+}
+
+
+/* FADE-UP */
+@keyframes fadeUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+
+
+/* ===== ULTRA PREMIUM HERO SECTION ===== */
+
+.premium-hero {
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1a1a1a 10%, #000 90%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Futuristic red glowing rings */
+.premium-hero::before,
+.premium-hero::after {
+  content: "";
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: rgba(255, 0, 0, 0.08);
+  animation: pulse 6s infinite ease-in-out alternate;
+  filter: blur(80px);
+}
+
+.premium-hero::before {
+  top: -100px;
+  right: -200px;
+}
+
+.premium-hero::after {
+  bottom: -150px;
+  left: -250px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  100% { transform: scale(1.1); opacity: 1; }
+}
+
+.inner-hero {
+  text-align: center;
+  max-width: 700px;
+  color: #fff;
+  padding: 40px;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  box-shadow: 0px 0px 40px rgba(255, 0, 0, 0.2),
+              inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+/* TAG LINE */
+.hero-tag {
+  display: inline-block;
+  font-size: 20px;
+  letter-spacing: 3px;
+  color: #ff2a2a;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  animation: fadeUp 1s ease forwards;
+}
+
+/* BIG TITLE */
+.hero-title {
+  font-size: 58px;
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #fff 40%, #ff3b3b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+/* DESCRIPTION */
+.hero-desc {
+  font-size: 18px;
+  line-height: 32px;
+  color: #ddd;
+  margin-bottom: 35px;
+  animation: fadeUp 1.4s ease forwards;
+}
+
+/* BUTTON */
+.hero-btn {
+  padding: 15px 45px;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(90deg, #ff0000, #b30000);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: 0.3s;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+}
+
+.hero-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 35px rgba(255, 0, 0, 0.8);
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}

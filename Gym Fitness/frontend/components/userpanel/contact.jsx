@@ -1,8 +1,9 @@
-
-
-
-import React from "react";
+import React, { useState } from "react";
+//import axios from "axios";
+import axios from "axios";
 import { Link } from "react-router-dom";
+
+import "../../src/assets/Footer.css";
 
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
@@ -13,12 +14,37 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 24.8607, // Karachi Latitude
-  lng: 67.0011, // Karachi Longitude
+  lat: 24.8607,
+  lng: 67.0011,
 };
 
 const Contactpage = () => {
   const sectionStyle = { backgroundColor: "#000", color: "#fff" };
+
+  // ---------------------- CONTACT FORM STATE ----------------------
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await axios.post("http://localhost:5000/api/contact", form);
+
+      alert("Message Sent Successfully!");
+      setForm({ name: "", email: "", message: "" });
+    } catch (err) {
+      alert("Something went wrong!");
+    }
+  };
+
+  // ----------------------------------------------------------------
 
   return (
     <>
@@ -30,43 +56,45 @@ const Contactpage = () => {
               <div className="menu-wrapper d-flex align-items-center justify-content-between">
                 <div className="logo">
                   <a href="/">
-                    <img src="assets/img/logo/logo.png" alt="Logo" />
+                    <img
+                      src="assets/img/logo/logos.png"
+                      alt="Logo"
+                      width="180"
+                      height="180"
+                    />
                   </a>
                 </div>
 
                 <div className="main-menu f-right d-none d-lg-block">
-                   <nav>
+                  <nav>
                     <ul id="navigation">
                       <li>
-                     <li><Link to="/">Home</Link></li>
-                      </li>
-                     <li><Link to="/about">About</Link></li>
-                      <li><Link to="/course">Courses</Link></li>
-                    <li><Link to="/price">Pricing</Link></li>
-                    <li><Link to="/gallery">Gallery</Link></li>
-                      <li>
-                     <li><Link to="/blog">Blog</Link></li>
-                        <ul className="submenu">
-                          <li>
-                     <li><Link to="/blog">Blog</Link></li>
-                          </li>
-                          <li>
-                            <a href="blog_details.html">Blog Details</a>
-                          </li>
-                          <li>
-                            <a href="elements.html">Elements</a>
-                          </li>
-                        </ul>
+                        <Link to="/">Home</Link>
                       </li>
                       <li>
-                     <li><Link to="/contact">Contact</Link></li>
+                        <Link to="/about">About</Link>
+                      </li>
+                      <li>
+                        <Link to="/course">Courses</Link>
+                      </li>
+                      <li>
+                        <Link to="/price">Pricing</Link>
+                      </li>
+                      <li>
+                        <Link to="/gallery">Gallery</Link>
+                      </li>
+                      
+                      <li>
+                        <Link to="/contact">Contact</Link>
                       </li>
                     </ul>
                   </nav>
                 </div>
 
                 <div className="header-btns d-none d-lg-block f-right">
-                  <a href="/contact" className="btn">Contact Me</a>
+                  <a href="/contact" className="btn">
+                    Contact Me
+                  </a>
                 </div>
 
                 <div className="col-12">
@@ -78,26 +106,35 @@ const Contactpage = () => {
         </div>
       </header>
 
+
+
+
       {/* ================= HERO SECTION ================= */}
       <div className="slider-area2" style={sectionStyle}>
         <div className="slider-height2 d-flex align-items-center">
           <div className="container">
             <div className="row">
               <div className="col-xl-12">
-                <div className="hero-cap hero-cap2 pt-70 text-center">
-                  <h2>Contact Me</h2>
-                </div>
+               <div className="hero-cap hero-cap2 pt-70 text-center contact-hero-heading">
+  <h2>Let's Talk Fitness</h2>
+  <p className="contact-tagline">Let’s Connect & Build Your Perfect Fitness Journey</p>
+  <div className="barbell-divider"></div>
+</div>
+
               </div>
             </div>
           </div>
         </div>
       </div>
 
+
       {/* ================= CONTACT SECTION ================= */}
       <section className="contact-section py-5">
-        <div className="container">
+        <h1 className="gym-heading-main">
+  Build Strength. Burn Fat. Become Unstoppable.
+</h1>
 
-          {/* GOOGLE MAP */}
+        <div className="container">
           <div className="mb-5 pb-4">
             <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
               <GoogleMap
@@ -109,11 +146,18 @@ const Contactpage = () => {
               </GoogleMap>
             </LoadScript>
           </div>
+          
+<h1 className="gym-heading-sub">
+  Let’s Get in Touch — Your Fitness Journey Starts Here.
+</h1>
 
           <div className="row">
-            {/* CONTACT FORM */}
+            {/* ================= CONTACT FORM (CONNECTED TO BACKEND) ================= */}
             <div className="col-lg-8 mb-4">
-              <form className="form-contact contact_form" action="#" method="post">
+              <form
+                className="form-contact contact_form"
+                onSubmit={handleSubmit}
+              >
                 <div className="row">
                   <div className="col-12">
                     <div className="form-group">
@@ -122,6 +166,9 @@ const Contactpage = () => {
                         name="name"
                         placeholder="Enter your name"
                         type="text"
+                        value={form.name}
+                        onChange={handleChange}
+                        required
                       />
                     </div>
                   </div>
@@ -133,6 +180,9 @@ const Contactpage = () => {
                         name="email"
                         placeholder="Enter email address"
                         type="email"
+                        value={form.email}
+                        onChange={handleChange}
+                        required
                       />
                     </div>
                   </div>
@@ -144,21 +194,28 @@ const Contactpage = () => {
                         name="message"
                         placeholder="Enter Message"
                         rows="5"
+                        value={form.message}
+                        onChange={handleChange}
+                        required
                       ></textarea>
                     </div>
                   </div>
                 </div>
 
                 <div className="form-group mt-3">
-                  <button type="submit" className="btn btn-primary">Send Message</button>
+                  <button type="submit" className="btn btn-primary">
+                    Send Message
+                  </button>
                 </div>
               </form>
             </div>
 
-            {/* CONTACT INFO */}
+            {/* ================= CONTACT INFO ================= */}
             <div className="col-lg-4">
               <div className="media contact-info mb-4">
-                <span className="contact-info__icon"><i className="ti-home"></i></span>
+                <span className="contact-info__icon">
+                  <i className="ti-home"></i>
+                </span>
                 <div className="media-body">
                   <h3>Pakistan, Lahore</h3>
                   <p>123 Street, Lahore</p>
@@ -166,7 +223,9 @@ const Contactpage = () => {
               </div>
 
               <div className="media contact-info mb-4">
-                <span className="contact-info__icon"><i className="ti-tablet"></i></span>
+                <span className="contact-info__icon">
+                  <i className="ti-tablet"></i>
+                </span>
                 <div className="media-body">
                   <h3>+92 300 1234567</h3>
                   <p>Mon to Fri 9am to 6pm</p>
@@ -174,7 +233,9 @@ const Contactpage = () => {
               </div>
 
               <div className="media contact-info">
-                <span className="contact-info__icon"><i className="ti-email"></i></span>
+                <span className="contact-info__icon">
+                  <i className="ti-email"></i>
+                </span>
                 <div className="media-body">
                   <h3>info@example.com</h3>
                   <p>Send us your query anytime!</p>
@@ -184,106 +245,68 @@ const Contactpage = () => {
           </div>
         </div>
       </section>
+      {/* Footer */}
+      <footer className="gym-footer">
 
+      {/* Floating Gym Icons */}
+      <div className="floating-icons">
+        <span>💪</span>
+        <span>🏋️</span>
+        <span>🥊</span>
+        <span>🏃‍♂️</span>
+      </div>
 
-       {/* Footer */}
-      <footer>
-        <div className="footer-area black-bg">
-          <div className="container">
-            <div className="footer-top footer-padding">
-              <div className="row">
-                <div className="col-xl-12">
-                  <div className="single-footer-caption mb-50 text-center">
-                    <div
-                      className="footer-logo wow fadeInUp"
-                      data-wow-duration="1s"
-                      data-wow-delay=".2s"
-                    >
-                      <a href="index.html">
-                        <img src="assets/img/logo/logo2_footer.png" alt="" />
-                      </a>
-                    </div>
+      <div className="footer-container">
 
-                    <div
-                      className="header-area main-header2 wow fadeInUp"
-                      data-wow-duration="2s"
-                      data-wow-delay=".4s"
-                    >
-                      <div className="main-header main-header2">
-                        <div className="menu-wrapper menu-wrapper2">
-                          <div className="main-menu main-menu2 text-center">
-                            <nav>
-                              <ul>
-                                <li>
-                                  <a href="index.html">Home</a>
-                                </li>
-                                <li>
-                                  <a href="about.html">About</a>
-                                </li>
-                                <li>
-                                  <a href="courses.html">Courses</a>
-                                </li>
-                                <li>
-                                  <a href="pricing.html">Pricing</a>
-                                </li>
-                                <li>
-                                  <a href="gallery.html">Gallery</a>
-                                </li>
-                                <li>
-                                  <a href="contact.html">Contact</a>
-                                </li>
-                              </ul>
-                            </nav>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      className="footer-social mt-30 wow fadeInUp"
-                      data-wow-duration="3s"
-                      data-wow-delay=".8s"
-                    >
-                      <a href="#">
-                        <i className="fab fa-twitter"></i>
-                      </a>
-                      <a href="https://bit.ly/sai4ull">
-                        <i className="fab fa-facebook-f"></i>
-                      </a>
-                      <a href="#">
-                        <i className="fab fa-pinterest-p"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="footer-bottom">
-              <div className="row d-flex align-items-center">
-                <div className="col-lg-12">
-                  <div className="footer-copy-right text-center">
-                    <p>
-                      Copyright &copy; {new Date().getFullYear()} All rights
-                      reserved | This template is made with{" "}
-                      <i className="fa fa-heart" aria-hidden="true"></i> by{" "}
-                      <a
-                        href="https://colorlib.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Colorlib
-                      </a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* Section 1: About */}
+        <div className="footer-box">
+          <h2 className="footer-title">About Gym Tracker</h2>
+          <p className="footer-text">
+            Your ultimate fitness companion — track workouts, measure progress,
+            stay consistent, and transform your body with powerful tools and
+            clean analytics.
+          </p>
         </div>
-      </footer>
 
-      {/* Scroll Up */}
+        {/* Section 2: Contact */}
+        <div className="footer-box">
+          <h2 className="footer-title">Contact</h2>
+          <p className="footer-text">📞 +92 300 254149</p>
+          <p className="footer-text">📧 misbahamir508@gmail.com</p>
+          <p className="footer-text">📞 +92 315 1376620</p>
+          <p className="footer-text">📧 maviaraheem45@gmail.com</p>
+  
+        </div>
+
+        {/* Section 3: Newsletter */}
+        <div className="footer-box">
+          <h2 className="footer-title">Stay Updated</h2>
+          <p className="footer-text">Get weekly fitness tips & new features.</p>
+
+          <div className="newsletter">
+            <input type="email" placeholder="Enter your email" />
+            <button>Subscribe</button>
+            
+          </div>
+                    <p className="footer-text">📍 Karachi, Pakistan</p>
+        </div>
+
+      </div>
+
+      {/* Bottom Text */}
+
+
+      <div className="footer-bottom-enhanced">
+  <p className="footer-text">
+    © {new Date().getFullYear()} <span className="brand">Gym Fitness Tracker</span>  
+    <span className="dash"> — </span>  <br></br>
+    Designed with Misbah Amir  <span className="heart">  ❤️   </span> Mavia Raheem  
+  </p>
+</div>
+
+    </footer>
+
+
       <div id="back-top">
         <a title="Go to Top" href="#">
           <i className="fas fa-level-up-alt"></i>

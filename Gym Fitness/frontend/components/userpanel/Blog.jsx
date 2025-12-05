@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-
+ import "../../src/assets/Footer.css";
 
 const Blogpage = () => {
       const sectionStyle = { backgroundColor: "#000", color: "#fff" };
@@ -45,9 +45,9 @@ return (
                     <div className="menu-wrapper d-flex align-items-center justify-content-between">
                       {/* Logo */}
                       <div className="logo">
-                        <a href="index.html">
-                          <img src="assets/img/logo/logo.png" alt="" />
-                        </a>
+                           <li><Link to="/">Home</Link></li>
+<img src="assets/img/logo/logos.png" alt="Logo" width="180" height="180" />
+                        
                       </div>
                       {/* Main-menu */}
                       <div className="main-menu f-right d-none d-lg-block">
@@ -60,23 +60,7 @@ return (
                             <li><Link to="/course">Courses</Link></li>
                           <li><Link to="/price">Pricing</Link></li>
                           <li><Link to="/gallery">Gallery</Link></li>
-                            <li>
-                           <li><Link to="/blog">Blog</Link></li>
-                              <ul className="submenu">
-                                <li>
-                           <li><Link to="/blog">Blog</Link></li>
-                                </li>
-                                <li>
-                                  <a href="blog_details.html">Blog Details</a>
-                                </li>
-                                <li>
-                                  <a href="elements.html">Elements</a>
-                                </li>
-                              </ul>
-                            </li>
-                            <li>
-                           <li><Link to="/contact">Contact</Link></li>
-                            </li>
+                            
                           </ul>
                         </nav>
                       </div>
@@ -302,48 +286,68 @@ return (
         </div>
       </section>
 
-      {/* ================= FOOTER ================= */}
-      <footer>
-        <div className="footer-area black-bg">
-          <div className="container">
-            <div className="footer-top footer-padding">
-              <div className="single-footer-caption mb-50 text-center">
-                <div className="footer-logo">
-                  <a href="/"><img src="assets/img/logo/logo2_footer.png" alt="footer logo" /></a>
-                </div>
 
-                <div className="main-menu2 text-center">
-                  <nav>
-                    <ul>
-                      <li><a href="/">Home</a></li>
-                      <li><a href="/about">About</a></li>
-                      <li><a href="/courses">Courses</a></li>
-                      <li><a href="/pricing">Pricing</a></li>
-                      <li><a href="/gallery">Gallery</a></li>
-                      <li><a href="/contact">Contact</a></li>
-                    </ul>
-                  </nav>
-                </div>
+      {/* Floating Gym Icons */}
+            {/* Footer */}
+      <footer className="gym-footer">
 
-                <div className="footer-social mt-30">
-                  <a href="#"><i className="fab fa-twitter"></i></a>
-                  <a href="#"><i className="fab fa-facebook-f"></i></a>
-                  <a href="#"><i className="fab fa-pinterest-p"></i></a>
-                </div>
-              </div>
-            </div>
+      {/* Floating Gym Icons */}
+      <div className="floating-icons">
+        <span>💪</span>
+        <span>🏋️</span>
+        <span>🥊</span>
+        <span>🏃‍♂️</span>
+      </div>
 
-            <div className="footer-bottom">
-              <div className="footer-copy-right text-center">
-                <p>
-                  Copyright © {new Date().getFullYear()} All rights reserved | Made with ❤️ by
-                  <a href="https://colorlib.com" target="_blank" rel="noreferrer"> Colorlib</a>
-                </p>
-              </div>
-            </div>
-          </div>
+      <div className="footer-container">
+
+        {/* Section 1: About */}
+        <div className="footer-box">
+          <h2 className="footer-title">About Gym Tracker</h2>
+          <p className="footer-text">
+            Your ultimate fitness companion — track workouts, measure progress,
+            stay consistent, and transform your body with powerful tools and
+            clean analytics.
+          </p>
         </div>
-      </footer>
+
+        {/* Section 2: Contact */}
+        <div className="footer-box">
+          <h2 className="footer-title">Contact</h2>
+          <p className="footer-text">📞 +92 300 254149</p>
+          <p className="footer-text">📧 misbahamir508@gmail.com</p>
+          <p className="footer-text">📞 +92 315 1376620</p>
+          <p className="footer-text">📧 maviaraheem45@gmail.com</p>
+  
+        </div>
+
+        {/* Section 3: Newsletter */}
+        <div className="footer-box">
+          <h2 className="footer-title">Stay Updated</h2>
+          <p className="footer-text">Get weekly fitness tips & new features.</p>
+
+          <div className="newsletter">
+            <input type="email" placeholder="Enter your email" />
+            <button>Subscribe</button>
+            
+          </div>
+                    <p className="footer-text">📍 Karachi, Pakistan</p>
+        </div>
+
+      </div>
+
+      {/* Bottom Text */}
+
+
+      <div className="footer-bottom-enhanced">
+  <p className="footer-text">
+    © {new Date().getFullYear()} <span className="brand">Gym Fitness Tracker</span>  
+    <span className="dash"> — </span>  <br></br>
+    Designed with Misbah Amir  <span className="heart">  ❤️   </span> Mavia Raheem  
+  </p>
+</div>
+
+    </footer>
 
       {/* Scroll Up */}
       <div id="back-top">

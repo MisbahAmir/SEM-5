@@ -2,6 +2,8 @@
 import { Link } from "react-router-dom";
 
 import React, { useEffect } from "react";
+ import "../../src/assets/Footer.css";
+import "../../src/assets/ModernSection.css";
 
 const IndexPage = () => {
 
@@ -49,7 +51,7 @@ const IndexPage = () => {
       
 
       {/* Header */}
-      <header>
+      {/* <header>
         <div className="header-area header-transparent">
           <div className="main-header header-sticky">
             <div className="container-fluid">
@@ -87,7 +89,69 @@ const IndexPage = () => {
             </div>
           </div>
         </div>
-      </header>
+      </header> */}
+
+
+
+
+    <header>
+      <div className="header-area header-transparent">
+        <div className="main-header header-sticky">
+          <div className="container-fluid">
+            <div className="menu-wrapper d-flex align-items-center justify-content-between">
+              
+              {/* Logo */}
+              <div className="logo">
+                <Link to="/">
+<img src="assets/img/logo/logos.png" alt="Logo" width="120" height="120" />
+
+                </Link>
+              </div>
+
+              {/* Main Menu */}
+              <div className="main-menu f-right d-none d-lg-block">
+                <nav>
+                  <ul id="navigation">
+                    <li><Link to="/index">Home</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/course">Courses</Link></li>
+                    <li><Link to="/price">Pricing</Link></li>
+                    <li><Link to="/gallery">Gallery</Link></li>
+                    <li>
+                      <Link to="/blog">Blog</Link>
+                      
+                    </li>
+                    <li><Link to="/contact">Contact</Link></li>
+
+                    {/* Admin Panel Link */}
+                    {/* {user?.role === "admin" && (
+                      <li>
+                        <Link to="/admin-users" className="text-red-400 font-bold">
+                          Admin Panel
+                        </Link>
+                      </li>
+                    )} */}
+                  </ul>
+                </nav>
+              </div>
+
+              {/* Header Buttons */}
+              <div className="header-btns d-none d-lg-block f-right">
+                <Link to="/contact" className="btn">Contact me</Link>
+              </div>
+
+              {/* Mobile Menu */}
+              <div className="col-12">
+                <div className="mobile_menu d-block d-lg-none"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
 
       {/* Main */}
       <main>
@@ -100,7 +164,7 @@ const IndexPage = () => {
                 <div className="row">
                   <div className="col-xl-9 col-lg-9 col-md-10">
                     <div className="hero__caption">
-                      <span data-animation="fadeInLeft" data-delay="0.1s">Hi This is Zacson</span>
+                      <span data-animation="fadeInLeft" data-delay="0.1s">Hi buddiess</span>
                       <h1 data-animation="fadeInLeft" data-delay="0.4s">Gym Trainer</h1>
                       <a href="courses.html" className="border-btn hero-btn" data-animation="fadeInLeft" data-delay="0.8s">My Courses</a>
                     </div>
@@ -120,11 +184,11 @@ const IndexPage = () => {
                   <div className="topic-img">
                     <img src="assets/img/gallery/cat1.png" alt="Personal Training"/>
                     <div className="topic-content-box">
-                      <div className="topic-content">
+                      {/* <div className="topic-content">
                         <h3>Personal training</h3>
                         <p>You’ll look at graphs and charts in Task One, how to approach the task and <br/> the language needed for a successful answer.</p>
                         <a href="courses.html" className="border-btn">View Courses</a>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -134,11 +198,11 @@ const IndexPage = () => {
                   <div className="topic-img">
                     <img src="assets/img/gallery/cat2.png" alt="Group Training"/>
                     <div className="topic-content-box">
-                      <div className="topic-content">
+                      {/* <div className="topic-content">
                         <h3>Group training</h3>
                         <p>You’ll look at graphs and charts in Task One, how to approach the task and <br/> the language needed for a successful answer.</p>
                         <a href="courses.html" className="btn">View Courses</a>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -216,46 +280,65 @@ const IndexPage = () => {
           </div>
         </div>
 
-        {/* Pricing Area */}
-        <section className="pricing-area section-padding40 fix">
-          <div className="container">
-            <div className="row">
-              <div className="col-xl-12">
-                <div className="section-tittle text-center mb-55 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                  <h2>Pricing</h2>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              {[...Array(3)].map((_, idx) => (
-                <div key={idx} className="col-lg-4 col-md-6 col-sm-6">
-                  <div className="properties mb-30 wow fadeInUp" data-wow-duration="1s" data-wow-delay={`.${2*idx}s`}>
-                    <div className="properties__card">
-                      <div className="about-icon">
-                        <img src="assets/img/icon/price.svg" alt=""/>
-                      </div>
-                      <div className="properties__caption">
-                        <span className="month">6 month</span>
-                        <p className="mb-25">$30/m  <span>(Single class)</span></p>
-                        {["Free riding", "Unlimited equipments", "Personal trainer", "Weight losing classes", "Month to mouth"].map((feat, i) => (
-                          <div key={i} className={`single-features ${i===4?'mb-20':''}`}>
-                            <div className="features-icon">
-                              <img src="assets/img/icon/check.svg" alt=""/>
-                            </div>
-                            <div className="features-caption">
-                              <p>{feat}</p>
-                            </div>
-                          </div>
-                        ))}
-                        <a href="#" className="border-btn border-btn2">Join Now</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+        {/* ===== ULTRA MODERN FUTURISTIC FITNESS SECTION ===== */}
+<section className="ultra-section">
+  <div className="container">
+
+    {/* Heading */}
+    <div className="ultra-header text-center">
+      <h2>
+        Elevate Your <span>Fitness Experience</span>
+      </h2>
+      <p>Train smarter. Track deeper. Perform like never before.</p>
+    </div>
+
+    <div className="row mt-5 justify-content-center">
+
+      {/* CARD 1 */}
+      <div className="col-lg-4 col-md-6">
+        <div className="ultra-card">
+          <div className="glow-circle"></div>
+          <div className="ultra-icon">
+            <i className="fas fa-running"></i>
           </div>
-        </section>
+          <h3>Motion Tracking</h3>
+          <p>AI detects posture, speed & timing to improve every session.</p>
+          <button className="ultra-btn">Explore</button>
+        </div>
+      </div>
+
+      {/* CARD 2 */}
+      <div className="col-lg-4 col-md-6">
+        <div className="ultra-card">
+          <div className="glow-circle"></div>
+          <div className="ultra-icon">
+            <i className="fas fa-fire"></i>
+          </div>
+          <h3>Calorie Analyzer</h3>
+          <p>Real-time burn tracking with precision metabolic calculation.</p>
+          <button className="ultra-btn">Start</button>
+        </div>
+      </div>
+
+      {/* CARD 3 */}
+      <div className="col-lg-4 col-md-6">
+        <div className="ultra-card">
+          <div className="glow-circle"></div>
+          <div className="ultra-icon">
+            <i className="fas fa-brain"></i>
+          </div>
+          <h3>AI Workout Coach</h3>
+          <p>Personalized routines with automatic difficulty adjustments.</p>
+          <button className="ultra-btn">Learn More</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
 
         {/* About Area */}
         <section className="about-area2 fix pb-padding pt-50 pb-80">
@@ -350,57 +433,65 @@ const IndexPage = () => {
       </main>
 
       {/* Footer */}
-      <footer>
-        <div className="footer-area black-bg">
-          <div className="container">
-            <div className="footer-top footer-padding">
-              <div className="row">
-                <div className="col-xl-12">
-                  <div className="single-footer-caption mb-50 text-center">
-                    <div className="footer-logo wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-                      <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt="Footer Logo"/></a>
-                    </div>
-                    <div className="header-area main-header2 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".4s">
-                      <div className="main-header main-header2">
-                        <div className="menu-wrapper menu-wrapper2">
-                          <div className="main-menu main-menu2 text-center">
-                            <nav>
-                              <ul>
-                           <li><Link to="/">Home</Link></li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="courses.html">Courses</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="gallery.html">Gallery</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                              </ul>
-                            </nav>
-                          </div>   
-                        </div>
-                      </div>
-                    </div>
-                    <div className="footer-social mt-30 wow fadeInUp" data-wow-duration="3s" data-wow-delay=".8s">
-                      <a href="#"><i className="fab fa-twitter"></i></a>
-                      <a href="https://bit.ly/sai4ull"><i className="fab fa-facebook-f"></i></a>
-                      <a href="#"><i className="fab fa-pinterest-p"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="footer-bottom">
-              <div className="row d-flex align-items-center">
-                <div className="col-lg-12">
-                  <div className="footer-copy-right text-center">
-                    <p>
-                      Copyright &copy;{new Date().getFullYear()} All rights reserved | Template by <a href="https://colorlib.com" target="_blank" rel="noreferrer">Colorlib</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <footer className="gym-footer">
+
+      {/* Floating Gym Icons */}
+      <div className="floating-icons">
+        <span>💪</span>
+        <span>🏋️</span>
+        <span>🥊</span>
+        <span>🏃‍♂️</span>
+      </div>
+
+      <div className="footer-container">
+
+        {/* Section 1: About */}
+        <div className="footer-box">
+          <h2 className="footer-title">About Gym Tracker</h2>
+          <p className="footer-text">
+            Your ultimate fitness companion — track workouts, measure progress,
+            stay consistent, and transform your body with powerful tools and
+            clean analytics.
+          </p>
         </div>
-      </footer>
+
+        {/* Section 2: Contact */}
+        <div className="footer-box">
+          <h2 className="footer-title">Contact</h2>
+          <p className="footer-text">📞 +92 300 254149</p>
+          <p className="footer-text">📧 misbahamir508@gmail.com</p>
+          <p className="footer-text">📞 +92 315 1376620</p>
+          <p className="footer-text">📧 maviaraheem45@gmail.com</p>
+  
+        </div>
+
+        {/* Section 3: Newsletter */}
+        <div className="footer-box">
+          <h2 className="footer-title">Stay Updated</h2>
+          <p className="footer-text">Get weekly fitness tips & new features.</p>
+
+          <div className="newsletter">
+            <input type="email" placeholder="Enter your email" />
+            <button>Subscribe</button>
+            
+          </div>
+                    <p className="footer-text">📍 Karachi, Pakistan</p>
+        </div>
+
+      </div>
+
+      {/* Bottom Text */}
+
+
+      <div className="footer-bottom-enhanced">
+  <p className="footer-text">
+    © {new Date().getFullYear()} <span className="brand">Gym Fitness Tracker</span>  
+    <span className="dash"> — </span>  <br></br>
+    Designed with Misbah Amir  <span className="heart">  ❤️   </span> Mavia Raheem  
+  </p>
+</div>
+
+    </footer>
 
       {/* Scroll Up */}
       <div id="back-top">

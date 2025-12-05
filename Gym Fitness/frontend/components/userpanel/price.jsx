@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+ import "../../src/assets/Footer.css";
 
 const PricePage = () => {
       const sectionStyle = { backgroundColor: "#000", color: "#fff" };
@@ -26,7 +27,7 @@ const PricePage = () => {
                 {/* Logo */}
                 <div className="logo">
                   <Link to="/">
-                    <img src="/assets/img/logo/logo.png" alt="logo" />
+<img src="assets/img/logo/logos.png" alt="Logo" width="180" height="180" />
                   </Link>
                 </div>
 
@@ -187,93 +188,68 @@ const PricePage = () => {
         </section>
       </main>
 
+
       {/* Footer */}
-      <footer>
-        <div className="footer-area black-bg">
-          <div className="container">
-            <div className="footer-top footer-padding">
-              <div className="row">
-                <div className="col-xl-12">
-                  <div className="single-footer-caption mb-50 text-center">
-                    <div
-                      className="footer-logo wow fadeInUp"
-                      data-wow-duration="1s"
-                      data-wow-delay=".2s"
-                    >
-                      <Link to="/">
-                        <img
-                          src="/assets/img/logo/logo2_footer.png"
-                          alt="footer logo"
-                        />
-                      </Link>
-                    </div>
+      <footer className="gym-footer">
 
-                    <div
-                      className="header-area main-header2 wow fadeInUp"
-                      data-wow-duration="2s"
-                      data-wow-delay=".4s"
-                    >
-                      <div className="main-header main-header2">
-                        <div className="menu-wrapper menu-wrapper2">
-                          <div className="main-menu main-menu2 text-center">
-                            <nav>
-                              <ul>
-                                <li><Link to="/">Home</Link></li>
-                                <li><Link to="/about">About</Link></li>
-                                <li><Link to="/course">Courses</Link></li>
-                                <li><Link to="/price">Pricing</Link></li>
-                                <li><Link to="/gallery">Gallery</Link></li>
-                                <li><Link to="/contact">Contact</Link></li>
-                              </ul>
-                            </nav>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+      {/* Floating Gym Icons */}
+      <div className="floating-icons">
+        <span>💪</span>
+        <span>🏋️</span>
+        <span>🥊</span>
+        <span>🏃‍♂️</span>
+      </div>
 
-                    <div
-                      className="footer-social mt-30 wow fadeInUp"
-                      data-wow-duration="3s"
-                      data-wow-delay=".8s"
-                    >
-                      <a href="#" aria-label="twitter">
-                        <i className="fab fa-twitter"></i>
-                      </a>
-                      <a href="https://bit.ly/sai4ull" aria-label="facebook" target="_blank" rel="noreferrer">
-                        <i className="fab fa-facebook-f"></i>
-                      </a>
-                      <a href="#" aria-label="pinterest">
-                        <i className="fab fa-pinterest-p"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div className="footer-container">
 
-            <div className="footer-bottom">
-              <div className="row d-flex align-items-center">
-                <div className="col-lg-12">
-                  <div className="footer-copy-right text-center">
-                    <p>
-                      Copyright &copy; {new Date().getFullYear()} All rights
-                      reserved | This template is made with{" "}
-                      <i className="fa fa-heart" aria-hidden="true"></i> by{" "}
-                      <a
-                        href="https://colorlib.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Colorlib
-                      </a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* Section 1: About */}
+        <div className="footer-box">
+          <h2 className="footer-title">About Gym Tracker</h2>
+          <p className="footer-text">
+            Your ultimate fitness companion — track workouts, measure progress,
+            stay consistent, and transform your body with powerful tools and
+            clean analytics.
+          </p>
         </div>
-      </footer>
+
+        {/* Section 2: Contact */}
+        <div className="footer-box">
+          <h2 className="footer-title">Contact</h2>
+          <p className="footer-text">📞 +92 300 254149</p>
+          <p className="footer-text">📧 misbahamir508@gmail.com</p>
+          <p className="footer-text">📞 +92 315 1376620</p>
+          <p className="footer-text">📧 maviaraheem45@gmail.com</p>
+  
+        </div>
+
+        {/* Section 3: Newsletter */}
+        <div className="footer-box">
+          <h2 className="footer-title">Stay Updated</h2>
+          <p className="footer-text">Get weekly fitness tips & new features.</p>
+
+          <div className="newsletter">
+            <input type="email" placeholder="Enter your email" />
+            <button>Subscribe</button>
+            
+          </div>
+                    <p className="footer-text">📍 Karachi, Pakistan</p>
+        </div>
+
+      </div>
+
+      {/* Bottom Text */}
+
+
+      <div className="footer-bottom-enhanced">
+  <p className="footer-text">
+    © {new Date().getFullYear()} <span className="brand">Gym Fitness Tracker</span>  
+    <span className="dash"> — </span>  <br></br>
+    Designed with Misbah Amir  <span className="heart">  ❤️   </span> Mavia Raheem  
+  </p>
+</div>
+
+    </footer>
+
 
       {/* Scroll Up */}
       <div id="back-top">
